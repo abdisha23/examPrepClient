@@ -11,7 +11,7 @@ import UploadExam from './pages/uploadExam';
 import TakeExam from './pages/TakeExam';
 import UploadQuiz from './pages/uploadQuiz';
 import Forum from './pages/Forum';
-// import Signup from './pages/signup';
+import AddCourse from './pages/AddCourse';
 import Login from './pages/login';
 import ForgotPassword from './pages/ForgotPassword';
 import SME from './pages/SME';
@@ -25,6 +25,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path="/add-course" element={<AddCourse />} />
           <Route path="/upload-material" element={<UploadMaterial />} />
           <Route path="/access-material" element={<MaterialAccess />} />
           <Route path="/track-progress" element={<TrackProgress />} />
@@ -32,7 +33,6 @@ const App = () => {
           <Route path="take-exam" element={<SecuredRoute><TakeExam /></SecuredRoute>} />
           <Route path="/upload-quiz" element={<UploadQuiz />} />
           <Route path="/forum" element={<Forum />} />
-          {/* <Route path="/signup" element={<Signup />} /> */}
           <Route path="/take-quiz" element={<SecuredRoute><TakeQuiz /></SecuredRoute>} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />

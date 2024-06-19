@@ -1,9 +1,9 @@
 import axios from "axios";
-import { base_url, config } from "../../utils/axiosConfig";
+import { base_url, authentication } from "../../utils/axiosConfig";
 
 
-const addCourse = async(courseTitle) => {
-    const response = await axios.post(`${base_url}course/create`)
+const addCourse = async(title) => {
+    const response = await axios.post(`${base_url}course/create`, title, authentication)
     if(response.data){
         return response.data;
     }
@@ -16,7 +16,8 @@ const getCourses = async() => {
 }
 
 export const courseService = {
-    getCourses
+    getCourses,
+    addCourse
 }
 
 
